@@ -8,11 +8,11 @@ import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 
 export const router: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'inicio', component: HomeComponent, pathMatch: 'full' },
   { path: 'nosotros', component: AboutComponent },
   { path: 'productos', component: ProductsComponent },
   { path: 'contacto', component: ContactComponent },
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: 'inicio' },
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);
