@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { LocationStrategy, HashLocationStrategy } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { ContactComponent } from './contact/contact.component';
     HttpModule,
     routes
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
