@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routes } from './app.router';
 
@@ -10,6 +10,7 @@ import { ProductsComponent } from './products/products.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { LocationStrategy, HashLocationStrategy } from "@angular/common";
+import { ContactService } from "app/contact/contact.service";
 
 @NgModule({
   declarations: [
@@ -22,10 +23,11 @@ import { LocationStrategy, HashLocationStrategy } from "@angular/common";
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     routes
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

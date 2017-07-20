@@ -13,10 +13,10 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.live = true;
   }
 
   ngAfterViewInit() {
-    this.live = true;
     this.recursiveCarousel(5000);
   }
 
